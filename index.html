@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TITAN-1 | AI-Based Scientific Image Restoration</title>
+
+  <meta
+    name="description"
+    content="TITAN-1 is a lightweight PyTorch AI-based scientific image restoration prototype for controlled image-denoising research and reproducible computational experiments."
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">TITAN-1</a>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#software">Software</a>
+        <a href="#real-data">Real Data</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#researcher">Researcher</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Hero -->
+  <main>
+
+    <section class="hero">
+      <div class="container hero-content">
+
+        <div class="badge">
+          AI for Scientific Imaging
+        </div>
+
+        <h1>
+          TITAN-1
+        </h1>
+
+        <h2>
+          AI-Based Scientific Image Restoration
+        </h2>
+
+        <p class="hero-text">
+          A lightweight PyTorch research prototype for controlled
+          scientific-image denoising, robustness evaluation,
+          reproducibility, and future AI-for-Science workflows.
+        </p>
+
+        <div class="hero-buttons">
+          <a
+            class="button primary"
+            href="https://github.com/mdakizulislam1-glitch/TITAN-1-BH-AI"
+            target="_blank"
+            rel="noopener"
+          >
+            View on GitHub
+          </a>
+
+          <a class="button secondary" href="#evidence">
+            View Evidence
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+
+        <div class="section-label">
+          01 — RESEARCH
+        </div>
+
+        <h2>Scientific Image Restoration</h2>
+
+        <p>
+          TITAN-1 studies a general scientific image-restoration problem
+          under controlled computational conditions.
+        </p>
+
+        <div class="equation">
+          y = H(x) + n
+        </div>
+
+        <div class="grid three">
+
+          <div class="card">
+            <h3>x</h3>
+            <p>
+              Underlying clean or latent scientific image.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>H</h3>
+            <p>
+              Degradation or instrument-response operator.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>n</h3>
+            <p>
+              Noise or measurement disturbance.
+            </p>
+          </div>
+
+        </div>
+
+        <p class="note">
+          The current TITAN-1 benchmark evaluates this problem using
+          controlled synthetic scientific-image structures.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- Evidence -->
+    <section id="evidence" class="section dark-section">
+      <div class="container">
+
+        <div class="section-label">
+          02 — EVIDENCE
+        </div>
+
+        <h2>Controlled Benchmark Evidence</h2>
+
+        <p>
+          TITAN-1 has been evaluated on an unseen elliptical
+          out-of-distribution benchmark and under several controlled
+          distribution shifts.
+        </p>
+
+
+        <div class="metrics">
+
+          <div class="metric">
+            <strong>5,000</strong>
+            <span>Training images</span>
+          </div>
+
+          <div class="metric">
+            <strong>700</strong>
+            <span>Unseen OOD images</span>
+          </div>
+
+          <div class="metric">
+            <strong>14,337</strong>
+            <span>Trainable parameters</span>
+          </div>
+
+          <div class="metric">
+            <strong>64×64</strong>
+            <span>Grayscale input</span>
+          </div>
+
+        </div>
+
+
+        <div class="evidence-card">
+
+          <h3>Independent OOD Evaluation</h3>
+
+          <div class="result-row">
+            <span>MSE</span>
+            <strong>0.00092568 ± 0.00083884</strong>
+          </div>
+
+          <div class="result-row">
+            <span>PSNR</span>
+            <strong>32.1562 ± 4.2082 dB</strong>
+          </div>
+
+          <div class="result-row">
+            <span>SSIM</span>
+            <strong>0.9104 ± 0.0948</strong>
+          </div>
+
+        </div>
+
+
+        <div class="grid three">
+
+          <div class="card">
+            <h3>Noise</h3>
+            <p>
+              Gaussian, salt-and-pepper, Poisson, and speckle
+              noise experiments.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>PSF / Blur</h3>
+            <p>
+              Controlled Gaussian PSF experiments examining
+              restoration under blur and noise.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Resolution</h3>
+            <p>
+              Controlled resolution-shift experiments across
+              multiple conditions.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Model -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-label">
+          03 — MODEL
+        </div>
+
+        <h2>Lightweight CNN Architecture</h2>
+
+        <p>
+          The canonical TITAN-1 model is intentionally compact and
+          designed for reproducible experimentation.
+        </p>
+
+        <div class="architecture">
+          <span>1</span>
+          <span>→</span>
+          <span>32</span>
+          <span>→</span>
+          <span>32</span>
+          <span>→</span>
+          <span>16</span>
+          <span>→</span>
+          <span>1</span>
+        </div>
+
+        <div class="grid two">
+
+          <div class="card">
+            <h3>Model</h3>
+
+            <ul>
+              <li>4 convolutional layers</li>
+              <li>3 × 3 kernels</li>
+              <li>ReLU activations</li>
+              <li>Final Sigmoid activation</li>
+              <li>14,337 trainable parameters</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Training</h3>
+
+            <ul>
+              <li>MSE loss</li>
+              <li>Adam optimizer</li>
+              <li>Learning rate: 0.001</li>
+              <li>Batch size: 32</li>
+              <li>30 training epochs</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Software -->
+    <section id="software" class="section dark-section">
+      <div class="container">
+
+        <div class="section-label">
+          04 — SOFTWARE
+        </div>
+
+        <h2>Research Software Foundation</h2>
+
+        <p>
+          TITAN-1 is being developed as reproducible scientific
+          software rather than only as a single experimental model.
+        </p>
+
+        <div class="grid three">
+
+          <div class="card">
+            <h3>Validation</h3>
+            <p>
+              Input validation, shape checks, finite-value checks,
+              and range validation.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Quality Control</h3>
+            <p>
+              Output quality checks and metadata generation
+              support controlled workflows.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Reproducibility</h3>
+            <p>
+              Deterministic inference, regression testing,
+              configuration auditing, and SHA-256 provenance.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="software-list">
+
+          <div>✓ Python inference interface</div>
+          <div>✓ CLI workflow</div>
+          <div>✓ Automated regression tests</div>
+          <div>✓ Configuration auditing</div>
+          <div>✓ Artifact integrity checks</div>
+          <div>✓ Scientific claim guardrails</div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Real Data -->
+    <section id="real-data" class="section">
+      <div class="container">
+
+        <div class="section-label">
+          05 — REAL SCIENTIFIC DATA
+        </div>
+
+        <h2>Event Horizon Telescope Data Foundation</h2>
+
+        <p>
+          Official Event Horizon Telescope M87 visibility data has
+          been examined as a research-data foundation.
+        </p>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <span class="status verified">VERIFIED</span>
+            <h3>Visibility Data Integrity</h3>
+            <p>
+              Source-data integrity, visibility extraction,
+              coordinate analysis, and finite-value checks.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="status verified">VERIFIED</span>
+            <h3>Fourier-Domain Analysis</h3>
+            <p>
+              Direct Fourier dirty-image reconstruction and
+              reconstruction-consistency analysis.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="status future">FUTURE</span>
+            <h3>TITAN-1 Real-Data Validation</h3>
+            <p>
+              Quantitative TITAN-1 inference on real EHT
+              observations remains to be established.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="warning">
+          <strong>Scientific limitation</strong>
+          <p>
+            The current real-data work does not establish real-EHT
+            denoising validation, astrophysical parameter inference,
+            institutional validation, or a production EHT pipeline.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Roadmap -->
+    <section id="roadmap" class="section dark-section">
+      <div class="container">
+
+        <div class="section-label">
+          06 — ROADMAP
+        </div>
+
+        <h2>From Research Prototype to Scientific Software</h2>
+
+        <div class="roadmap">
+
+          <div class="roadmap-item completed">
+            <span>01</span>
+            <div>
+              <strong>Controlled Synthetic Benchmark</strong>
+              <p>Validated</p>
+            </div>
+          </div>
+
+          <div class="roadmap-item completed">
+            <span>02</span>
+            <div>
+              <strong>Reproducible Software Foundation</strong>
+              <p>Completed</p>
+            </div>
+          </div>
+
+          <div class="roadmap-item active">
+            <span>03</span>
+            <div>
+              <strong>Independent Reproducibility</strong>
+              <p>In progress</p>
+            </div>
+          </div>
+
+          <div class="roadmap-item">
+            <span>04</span>
+            <div>
+              <strong>GPU / CUDA Acceleration</strong>
+              <p>Future</p>
+            </div>
+          </div>
+
+          <div class="roadmap-item">
+            <span>05</span>
+            <div>
+              <strong>Instrument-Specific Degradation Models</strong>
+              <p>Future</p>
+            </div>
+          </div>
+
+          <div class="roadmap-item">
+            <span>06</span>
+            <div>
+              <strong>Real Observational Data Validation</strong>
+              <p>Future</p>
+            </div>
+          </div>
+
+          <div class="roadmap-item">
+            <span>07</span>
+            <div>
+              <strong>External Scientific-User Evaluation</strong>
+              <p>Future</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Scientific Position -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-label">
+          07 — SCIENTIFIC POSITION
+        </div>
+
+        <h2>What TITAN-1 Does — and Does Not — Claim</h2>
+
+        <div class="grid two">
+
+          <div class="claim positive">
+            <h3>Currently Supported</h3>
+
+            <ul>
+              <li>Controlled synthetic scientific-image denoising</li>
+              <li>Unseen morphology evaluation</li>
+              <li>Multiple noise-family experiments</li>
+              <li>Controlled PSF / blur experiments</li>
+              <li>Resolution-shift evaluation</li>
+              <li>Reproducible software foundation</li>
+            </ul>
+          </div>
+
+
+          <div class="claim limitation">
+            <h3>Not Yet Established</h3>
+
+            <ul>
+              <li>Real EHT TITAN-1 validation</li>
+              <li>Astrophysical parameter inference</li>
+              <li>NASA / ESA / CERN validation</li>
+              <li>Production telescope pipeline</li>
+              <li>Commercial validation</li>
+              <li>Universal denoising superiority</li>
+              <li>New-physics discovery</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Researcher -->
+    <section id="researcher" class="section researcher">
+      <div class="container">
+
+        <div class="section-label">
+          08 — RESEARCHER
+        </div>
+
+        <h2>Md. Akizul Islam</h2>
+
+        <p class="role">
+          Independent Researcher & Programmer
+        </p>
+
+        <p>
+          Bangladesh
+        </p>
+
+        <p class="researcher-text">
+          Working across scientific computing, Python, physics,
+          data analysis, machine learning, and AI-for-Science
+          software development.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            class="button primary"
+            href="https://github.com/mdakizulislam1-glitch/TITAN-1-BH-AI"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub Repository
+          </a>
+
+          <a
+            class="button secondary"
+            href="https://github.com/mdakizulislam1-glitch"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub Profile
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+
+      <div>
+        <strong>TITAN-1</strong>
+        <p>
+          AI-Based Scientific Image Restoration
+        </p>
+      </div>
+
+      <div>
+        <p>
+          Independent Research Project · Bangladesh
+        </p>
+
+        <p class="footer-note">
+          Scientific claims are limited to currently established
+          evidence and validation.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
