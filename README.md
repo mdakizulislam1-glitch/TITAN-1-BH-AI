@@ -1,4 +1,4 @@
-# TITAN-1 — AI-Based Scientific Image Restoration
+# TITAN-1 — Scientific Image Restoration Engine
 
 ### A Controlled PyTorch CNN Benchmark for Image Denoising, Baseline Comparison, and Robustness Evaluation
 
