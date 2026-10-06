@@ -1,5 +1,5 @@
 # TITAN-1 — Scientific Image Restoration Engine
-🚀 **Live Demo:** https://mdakizulislam1-titan-1-scientific-image-restoration.hf.space
+🚀 **Live Demo:** https://huggingface.co/spaces/mdakizulislam1/TITAN-1-Scientific-Image-Restoration
 🤗 **Hugging Face Space:** https://huggingface.co/spaces/mdakizulislam1/TITAN-1-Scientific-Image-Restoration
 
 ### A lightweight, reproducible framework for controlled scientific image restoration and out-of-distribution evaluation.
