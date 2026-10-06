@@ -1,14 +1,19 @@
-# TITAN-1 — Scientific Image Restoration Engine
+TITAN-1 — Scientific Image Restoration Engine
 
-🚀 **Live Demo:** https://huggingface.co/spaces/mdakizulislam1/TITAN-1-Scientific-Image-Restoration
+🚀 **Live Demo:** https://mdakizulislam1-titan-1-scientific-image-restoration.hf.space
 
 🤗 **Hugging Face Space:** https://huggingface.co/spaces/mdakizulislam1/TITAN-1-Scientific-Image-Restoration
 
 ### A lightweight, reproducible framework for controlled scientific image restoration and out-of-distribution evaluation.
+
 **Researcher:** Md. Akizul Islam
+
 **Email:** mdakizulislam1@gmail.com
+
 **Role:** Independent Researcher & Programmer
+
 **Location:** Khulna, Bangladesh
+
 **Contact:** mdakizulislam1@gmail.com | GitHub: mdakizulislam1-glitch
 ---
 
