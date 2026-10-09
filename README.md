@@ -14,7 +14,7 @@ TITAN-1 — Scientific Image Restoration Engine
 
 **Location:** Khulna, Bangladesh
 
-**Contact:** mdakizulislam1@gmail.com | GitHub: mdakizulislam1-glitch
+**Contact:** mdakizulislam1@gmail.com |GitHub: mdakizulislam1-glitch
 ---
 
 ## Overview
