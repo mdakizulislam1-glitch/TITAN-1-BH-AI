@@ -600,6 +600,36 @@ TITAN-1 follows a simple rule:
 Documented historical results remain identified as historical results.
 New scientific claims require corresponding reproducible evidence.
 
+Commercial Pilot & Research Collaboration
+
+TITAN-1 — Scientific Image Restoration Prototype
+
+TITAN-1 is a research-stage Python-based image-restoration project focused on image denoising, quantitative evaluation, and reproducible scientific computing workflows.
+
+Available Pilot Services
+
+- Scientific image-denoising evaluation
+- PSNR, SSIM, and MSE metric reporting
+- Comparison with conventional image-processing baselines
+- Reproducible Python notebooks and technical reports
+
+Pilot Scope
+
+A pilot begins with an agreed dataset, evaluation protocol, deliverables, and acceptance criteria. Results will be reported transparently, including limitations and cases where restoration does not improve image quality.
+
+Current benchmark evidence includes synthetic images. Independent validation on real scientific datasets and production readiness have not yet been established.
+
+Collaboration
+
+Research groups, scientific software teams, and developers interested in a scoped evaluation or custom image-processing workflow are welcome to discuss a pilot project.
+
+Contact: [Add your professional contact email]
+
+Source code: https://github.com/mdakizulislam1-glitch/TITAN-1-BH-AI
+
+Demo: https://huggingface.co/spaces/mdakizulislam1/TITAN-1-Scientific-Image-Restoration
+
+
 ---
 
 **TITAN-1 — Scientific Image Restoration Engine**  
