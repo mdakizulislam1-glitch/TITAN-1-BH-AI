@@ -623,7 +623,7 @@ Collaboration
 
 Research groups, scientific software teams, and developers interested in a scoped evaluation or custom image-processing workflow are welcome to discuss a pilot project.
 
-Contact: [Add your professional contact email]
+Contact: mdakizulislam1@gmail.com
 
 Source code: https://github.com/mdakizulislam1-glitch/TITAN-1-BH-AI
 
