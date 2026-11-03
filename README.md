@@ -1,6 +1,9 @@
 TITAN-1 — Scientific Image Restoration Engine
 
-🚀 Live Demo: https://mdakizulislam1-titan-1-scientific-image-restoration.static.hf.space
+🚀 Live Demo: 
+
+🌐 Live Website: https://mdakizulislam1-glitch.github.io/TITAN-1-BH-AI/
+
 
 🤗 **Hugging Face Space:** https://huggingface.co/spaces/mdakizulislam1/TITAN-1-Scientific-Image-Restoration
 
