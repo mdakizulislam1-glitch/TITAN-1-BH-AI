@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d19">
+<title>TITAN-1 | Scientific Image Restoration</title>
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #080d19;
+  --panel: #111a2b;
+  --line: #263650;
+  --text: #eaf1ff;
+  --muted: #93a4bd;
+  --accent: #58b9ff;
+  --green: #54d6a0;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #172b48, var(--bg) 55%);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+header {
+  padding: 24px 6%;
+  border-bottom: 1px solid var(--line);
+}
+.brand { color: var(--accent); font-weight: 800; letter-spacing: 3px; }
+main { max-width: 1050px; margin: auto; padding: 35px 18px; }
+.hero { text-align: center; padding: 28px 0; }
+h1 { font-size: clamp(30px, 6vw, 54px); margin: 12px 0; }
+.hero p, .muted { color: var(--muted); line-height: 1.7; }
+.tag {
+  display: inline-block; border: 1px solid #315579;
+  padding: 7px 13px; border-radius: 30px;
+  color: var(--accent); font-size: 12px;
+}
+.grid {
+  display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+  gap: 15px; margin: 25px 0;
+}
+.card {
+  background: linear-gradient(145deg,#15243a,#101827);
+  border: 1px solid var(--line); border-radius: 15px;
+  padding: 20px;
+}
+.card h3 { margin-top: 0; }
+.value { font-size: 25px; color: var(--green); font-weight: bold; }
+button, .upload {
+  display: inline-block; border: 0; border-radius: 9px;
+  padding: 13px 18px; font-weight: bold; cursor: pointer;
+  background: var(--accent); color: #07111f;
+}
+.upload { background: #203c5c; color: white; }
+input { display: none; }
+.preview {
+  width: 100%; max-height: 340px; object-fit: contain;
+  background: #050914; border: 1px solid var(--line);
+  border-radius: 10px; margin-top: 12px;
+}
+.status { color: var(--green); font-size: 13px; }
+footer {
+  border-top: 1px solid var(--line); padding: 22px;
+  text-align: center; color: var(--muted); font-size: 12px;
+}
+button:focus-visible,.upload:focus-visible {
+  outline: 3px solid white; outline-offset: 3px;
+}
+@media(max-width:500px) {
+  main { padding: 20px 13px; }
+  .hero { padding: 15px 0; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">AKIZ M · SCIENTIFIC ENGINEERING</div>
+</header>
+<main>
+  <section class="hero">
+    <span class="tag">SCIENTIFIC SOFTWARE · CPU MVP</span>
+    <h1>TITAN-1</h1>
+    <p>Scientific Image Restoration Engine</p>
+    <p>Research-focused image restoration demonstration interface.</p>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h3>Model Architecture</h3>
+      <div class="value">FINAL_MASTER</div>
+      <p class="muted">14,337 trainable parameters</p>
+    </div>
+    <div class="card">
+      <h3>Inference Environment</h3>
+      <div class="value">CPU</div>
+      <p class="muted">Google Colab · PyTorch</p>
+    </div>
+    <div class="card">
+      <h3>Input Specification</h3>
+      <div class="value">64 × 64</div>
+      <p class="muted">Single-channel grayscale</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Image Preview</h2>
+    <p class="muted">Select a grayscale or color image to preview it locally.</p>
+    <label class="upload" for="imageInput">Choose Image</label>
+    <input id="imageInput" type="file" accept="image/*">
+    <img id="preview" class="preview" alt="Selected image preview" hidden>
+    <p id="fileStatus" class="status">Waiting for image selection.</p>
+  </section>
+
+  <section class="card" style="margin-top:16px">
+    <h2>Restoration Engine</h2>
+    <p class="muted">
+      This page is currently a frontend demonstration.
+      Image selection does not yet execute the TITAN-1 model.
+      Backend integration is a separate development step.
+    </p>
+    <button type="button" disabled style="opacity:.45;cursor:not-allowed">
+      Restoration API — Integration Pending
+    </button>
+    <p class="status">Backend status: Not connected</p>
+  </section>
+
+  <section class="card" style="margin-top:16px">
+    <h3>Research & Validation Status</h3>
+    <p class="status">Local inference smoke test: PASS</p>
+    <p class="status">API endpoint test: PASS</p>
+    <p class="status">Direct/API consistency: 100% exact pixel match</p>
+    <p class="muted">
+      These results establish tested software functionality, not
+      independent scientific validation or production certification.
+    </p>
+  </section>
+</main>
+<footer>
+  TITAN-1 · AKIZ M · Independent Research Software Project<br>
+  Demonstration interface · Not production-certified
+</footer>
+<script>
+const input = document.getElementById("imageInput");
+const preview = document.getElementById("preview");
+const status = document.getElementById("fileStatus");
+let currentURL = null;
+
+input.addEventListener("change", () => {
+  const file = input.files && input.files[0];
+  if (!file) return;
+
+  if (!file.type.startsWith("image/")) {
+    status.textContent = "Please select a valid image.";
+    return;
+  }
+
+  if (currentURL) URL.revokeObjectURL(currentURL);
+  currentURL = URL.createObjectURL(file);
+  preview.src = currentURL;
+  preview.hidden = false;
+  status.textContent =
+    "Image loaded locally: " + file.name +
+    " (" + Math.round(file.size / 1024) + " KB)";
+});
+</script>
+</body>
+</html>
